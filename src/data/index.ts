@@ -27,3 +27,18 @@ export const navLinks = [
     ],
   },
 ];
+
+export const languages = [
+  'BANGLA',
+  'ENGLISH',
+  'HINDI',
+  'HINDI DUBBED',
+  'TAMIL',
+  'TELUGU',
+  'MALAYALAM',
+  'KOREAN',
+  'JAPANESE',
+  'RUSSIAN',
+  'INDONESIAN',
+  'CHINESE',
+];

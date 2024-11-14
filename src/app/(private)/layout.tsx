@@ -27,7 +27,7 @@ export default function PrivateLayout({
           <ThemeModeToggle />
         </header>
 
-        <Card className="bg-muted/30 m-2 p-2">{children}</Card>
+        <Card className="bg-muted/30 m-2">{children}</Card>
       </SidebarInset>
     </SidebarProvider>
   );
