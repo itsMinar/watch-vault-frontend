@@ -41,4 +41,5 @@ export const languages = [
   'RUSSIAN',
   'INDONESIAN',
   'CHINESE',
+  'OTHERS',
 ];

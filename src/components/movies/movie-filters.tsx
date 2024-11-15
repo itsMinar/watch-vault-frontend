@@ -12,6 +12,7 @@ import {
 import { languages } from '@/data';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { AddMovieButton } from './add-movie';
 
 export default function MovieFilters() {
   const router = useRouter();
@@ -48,9 +49,6 @@ export default function MovieFilters() {
           <SelectValue placeholder="Release Year" />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value={null} hidden>
-            All Years
-          </SelectItem>
           {[...Array(100)].map((_, i) => (
             <SelectItem key={i} value={(2023 - i).toString()}>
               {2023 - i}
@@ -64,9 +62,6 @@ export default function MovieFilters() {
           <SelectValue placeholder="Language" />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value={null} hidden>
-            All Languages
-          </SelectItem>
           {languages.map((language) => (
             <SelectItem key={language} value={language}>
               {language}
@@ -86,7 +81,7 @@ export default function MovieFilters() {
         Clear Filters
       </Button>
 
-      <Button>Add New</Button>
+      <AddMovieButton />
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import { MovieCard } from '@/components/movies/movie-card';
+import { Movie } from '@/types';
 
 const token =
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzJjYzU1MWNiN2QzZTMxZjVkNjA1OGUiLCJlbWFpbCI6Im1pbmFyQG1haWwuY29tIiwiaWF0IjoxNzMxNTk5Nzc2LCJleHAiOjE3MzE2ODYxNzZ9.VuGhq4puAPeB3hrrd6Rh7LJsi22ySZ135qskNyWhxdI';
@@ -26,7 +27,7 @@ export default async function WatchListPage() {
 
   if (response.data.length === 0) {
     return (
-      <p className="text-muted-foreground text-center">
+      <p className="text-center text-muted-foreground">
         No movies found matching your criteria.
       </p>
     );
@@ -35,7 +36,7 @@ export default async function WatchListPage() {
   return (
     <div className="mx-auto px-4 py-6">
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-        {response.data.map((movie) => (
+        {response.data.map((movie: Movie) => (
           <MovieCard key={movie._id} movie={movie} />
         ))}
       </div>

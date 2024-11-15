@@ -9,7 +9,10 @@ export default function WatchedMoviesPage({
 }) {
   return (
     <div className="mx-auto px-4 py-6">
-      <MovieFilters />
+      <Suspense>
+        <MovieFilters />
+      </Suspense>
+
       <Suspense fallback={<div>Loading...</div>}>
         <MovieList searchParams={searchParams} />
       </Suspense>
