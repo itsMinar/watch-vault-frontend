@@ -1,11 +1,10 @@
 import { MovieCard } from '@/components/movies/movie-card';
+import { API_BASE_URL, token } from '@/data';
 import { Movie } from '@/types';
-
-const token =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzJjYzU1MWNiN2QzZTMxZjVkNjA1OGUiLCJlbWFpbCI6Im1pbmFyQG1haWwuY29tIiwiaWF0IjoxNzMxNTk5Nzc2LCJleHAiOjE3MzE2ODYxNzZ9.VuGhq4puAPeB3hrrd6Rh7LJsi22ySZ135qskNyWhxdI';
+import type { Metadata } from 'next';
 
 async function getMovies() {
-  const apiUrl = `http://localhost:8000/api/v1/movies/watch-list`;
+  const apiUrl = `${API_BASE_URL}/movies/watch-list`;
 
   const res = await fetch(apiUrl, {
     method: 'GET',
@@ -21,6 +20,10 @@ async function getMovies() {
 
   return res.json();
 }
+
+export const metadata: Metadata = {
+  title: 'Watch List - WatchVault',
+};
 
 export default async function WatchListPage() {
   const response = await getMovies();

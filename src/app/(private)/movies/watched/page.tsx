@@ -1,6 +1,11 @@
 import MovieFilters from '@/components/movies/movie-filters';
 import MovieList from '@/components/movies/movie-list';
+import type { Metadata } from 'next';
 import { Suspense } from 'react';
+
+export const metadata: Metadata = {
+  title: 'Watched Movies - WatchVault',
+};
 
 export default function WatchedMoviesPage({
   searchParams,

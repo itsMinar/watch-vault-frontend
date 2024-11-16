@@ -33,3 +33,36 @@ export interface Pagination {
   totalMovies: number;
   limit: number;
 }
+
+// =====================================
+export interface AnalyticsResponse {
+  success: boolean;
+  statusCode: number;
+  message: string;
+  data: AnalyticsData;
+}
+
+export interface AnalyticsData {
+  user: User;
+  totalWatchedMovies: number;
+  totalWatchlistMovies: number;
+  topLanguage: string;
+  mostWatchedYear: number;
+  moviesByLanguage: MoviesByLanguage[];
+  moviesByYear: MoviesByYear[];
+}
+
+export interface MoviesByLanguage {
+  _id: string;
+  count: number;
+}
+
+export interface MoviesByYear {
+  _id: number;
+  count: number;
+}
+
+export interface User {
+  name: string;
+  email: string;
+}

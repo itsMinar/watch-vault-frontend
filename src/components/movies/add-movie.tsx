@@ -1,6 +1,6 @@
 'use client';
 
-import { addWatchedMovie } from '@/actions';
+import { addWatchedMovie } from '@/actions/movie';
 import { Button } from '@/components/ui/button';
 import {
   Dialog,

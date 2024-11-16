@@ -1,11 +1,9 @@
+import { API_BASE_URL, token } from '@/data';
 import { SuccessResponse } from '@/types';
 import { MovieCard } from './movie-card';
 
-const token =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzJjYzU1MWNiN2QzZTMxZjVkNjA1OGUiLCJlbWFpbCI6Im1pbmFyQG1haWwuY29tIiwiaWF0IjoxNzMxNTk5Nzc2LCJleHAiOjE3MzE2ODYxNzZ9.VuGhq4puAPeB3hrrd6Rh7LJsi22ySZ135qskNyWhxdI';
-
 async function getMovies(params: URLSearchParams) {
-  const apiUrl = `http://localhost:8000/api/v1/movies/watched?${params.toString()}`;
+  const apiUrl = `${API_BASE_URL}/movies/watched?${params.toString()}`;
 
   const res = await fetch(apiUrl, {
     method: 'GET',
@@ -39,7 +37,7 @@ export default async function MovieList({
 
   if (response.data.movies.length === 0) {
     return (
-      <p className="text-muted-foreground text-center">
+      <p className="text-center text-muted-foreground">
         No movies found matching your criteria.
       </p>
     );

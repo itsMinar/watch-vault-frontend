@@ -21,6 +21,7 @@ export async function addWatchedMovie(formData: MovieFormData) {
     }
 
     revalidatePath('/movies/watched');
+    revalidatePath('/analytics');
 
     return { success: true, message: 'Watched Movie added successfully!' };
   } catch (error) {
